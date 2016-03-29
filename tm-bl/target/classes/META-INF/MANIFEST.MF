@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1458748077075
+Build-Jdk: 1.7.0_79
+Built-By: chuck
+Bundle-Description: Traffic Manager - service implementation module
+Bundle-ManifestVersion: 2
+Bundle-Name: tm-bl
+Bundle-SymbolicName: com.fct.tm.tm-bl
+Bundle-Version: 1.0.0.SNAPSHOT
+Created-By: Apache Maven Bundle Plugin
+Export-Package: com.fct.tm.handler;uses:="com.hp.util.ip,com.hp.of.lib.m
+ sg,com.hp.of.ctl.pkt,com.hp.of.lib.instr,com.hp.of.lib,org.slf4j,com.hp
+ .of.lib.dt,com.hp.of.ctl,com.hp.of.lib.match,com.hp.util.pkt";version="
+ 1.0.0.SNAPSHOT",com.fct.tm.listener;uses:="com.fct.tm.handler,com.hp.ut
+ il.ip,com.hp.of.lib.msg,com.hp.of.lib.dt,com.hp.of.ctl,javax.crypto,org
+ .apache.commons.codec.binary,com.hp.of.lib,org.slf4j,javax.crypto.spec,
+ com.hp.of.lib.match,com.hp.of.ctl.pkt,com.hp.of.lib.instr,com.hp.util.p
+ kt";version="1.0.0.SNAPSHOT"
+Import-Package: com.fct.tm.api;version="[1.0,2)",com.fct.tm.listener,com
+ .hp.of.ctl,com.hp.of.ctl.pkt,com.hp.of.lib,com.hp.of.lib.dt,com.hp.of.l
+ ib.instr,com.hp.of.lib.match,com.hp.of.lib.msg,com.hp.util.ip,com.hp.ut
+ il.pkt,javax.crypto,javax.crypto.spec,org.apache.commons.codec.binary;v
+ ersion="[1.6,2)",org.slf4j;version="[1.7,2)"
+Service-Component: OSGI-INF/com.fct.tm.impl.trffcmngrManager.xml
+Tool: Bnd-1.50.0

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><components xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0">
+    <scr:component immediate="true" name="com.fct.tm.rs.ServiceAssistant">
+        <implementation class="com.fct.tm.rs.ServiceAssistant"/>
+        <property name="service.pid" value="com.fct.tm.rs.ServiceAssistant"/>
+        <reference name="trffcmngrService" interface="com.fct.tm.api.trffcmngrService" cardinality="0..n" policy="dynamic" bind="bindtrffcmngrService" unbind="unbindtrffcmngrService"/>
+    </scr:component>
+</components>

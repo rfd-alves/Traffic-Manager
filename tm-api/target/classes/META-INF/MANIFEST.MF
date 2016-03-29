@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1458748074846
+Build-Jdk: 1.7.0_79
+Built-By: chuck
+Bundle-Description: Traffic Manager - interface definitions module
+Bundle-ManifestVersion: 2
+Bundle-Name: tm-api
+Bundle-SymbolicName: com.fct.tm.tm-api
+Bundle-Version: 1.0.0.SNAPSHOT
+Created-By: Apache Maven Bundle Plugin
+Export-Package: com.fct.tm.api;version="1.0.0.SNAPSHOT"
+Tool: Bnd-1.50.0

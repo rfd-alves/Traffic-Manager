@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <parent>
+        <groupId>com.fct.tm</groupId>
+        <artifactId>tm-root</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../tm-root/pom.xml</relativePath>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>tm-app</artifactId>
+    <packaging>pom</packaging>
+
+    <name>tm-app</name>
+    <description>Traffic Manager - application packaging module</description>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.fct.tm</groupId>
+            <artifactId>tm-model</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fct.tm</groupId>
+            <artifactId>tm-api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fct.tm</groupId>
+            <artifactId>tm-bl</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>package-app</id>
+                        <phase>package</phase>
+                        <configuration>
+                            <tasks>
+                                <mkdir dir="target/bundles" />
+
+                                <copy todir="target/bundles/" flatten="true">
+                                    <fileset dir="/home/chuck/.m2/repository/com/fct/tm/">
+                                        <include name="tm-model/${project.version}/tm-model-${project.version}.jar"/>
+                                        <include name="tm-api/${project.version}/tm-api-${project.version}.jar"/>
+                                        <include name="tm-dao-api/${project.version}/tm-dao-api-${project.version}.jar"/>
+                                        <include name="tm-bl/${project.version}/tm-bl-${project.version}.jar"/>
+                                        <include name="tm-dao/${project.version}/tm-dao-${project.version}.jar"/>
+                                        <include name="tm-rs/${project.version}/tm-rs-${project.version}.war"/>
+                                        <include name="tm-ui/${project.version}/tm-ui-${project.version}.war"/>
+                                    </fileset>
+                                    <fileset dir="${basedir}" includes="tm.descriptor"/>
+                                </copy>
+
+                                <zip destfile="target/tm-${project.version}.zip" basedir="target/bundles"/>
+                            </tasks>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+    
+</project>

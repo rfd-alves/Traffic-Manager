@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><metatype:MetaData xmlns:metatype="http://www.osgi.org/xmlns/metatype/v1.0.0" localization="OSGI-INF/metatype/metatype">
+    <OCD id="com.fct.tm.impl.trffcmngrManager" name="%com.fct.tm.impl.trffcmngrManager.name" description="%com.fct.tm.impl.trffcmngrManager.description"/>
+    <Designate pid="com.fct.tm.impl.trffcmngrManager">
+        <Object ocdref="com.fct.tm.impl.trffcmngrManager"/>
+    </Designate>
+</metatype:MetaData>

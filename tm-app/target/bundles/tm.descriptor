@@ -1,0 +1,5 @@
+id=com.fct.tm
+name=Traffic Manager
+version=1.0.0.SNAPSHOT
+vendor=fct
+description=Application for Traffic managment.
